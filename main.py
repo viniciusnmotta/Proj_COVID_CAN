@@ -1,5 +1,5 @@
 from flask import Flask, render_template, url_for, redirect, request, Response
-from flask_bootstrap import Bootstrap
+# from flask_bootstrap import Bootstrap
 from datetime import datetime
 import requests
 import pandas as pd
@@ -11,8 +11,8 @@ import matplotlib.dates as mdates
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
-Bootstrap(app)
+# app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
+# Bootstrap(app)
 
 prname = "Canada"
 province_list = ['Ontario', 'British Columbia', 'Canada', 'Quebec', 'Alberta', 'Saskatchewan',
