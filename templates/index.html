@@ -56,14 +56,16 @@
 					<input name="region",size="200", style="padding: 0em 4em 0em 0em">
 					<input type="submit", style="padding: 0.1em 1em 0.1em 1em" >
 				</form>
+				<br>
+				<a href="#tb", style="color:blue">Summary table for the past 7 days </a>
 			</article>
 
 		<!--Table past 7 days-->
-		<article class="container">
-			<h1 style="color: white" >Data from the past 7 days</h1>
-			<table class="table table-striped">
+		<article id="tb" class="container box style4 left">
+			<h1 style="color: white" >Data from the past 7 days ||  <a href="#graph" style="text-transform:lowercase; color:#FFC300">go back to graph</a></h1>
+			<table style="background:green">
 			{{df|safe}}
-				</table>
+			</table>
 		</article>
 
 
