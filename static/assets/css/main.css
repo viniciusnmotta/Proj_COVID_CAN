@@ -1844,7 +1844,7 @@ input, select, textarea {
 
 		.box.style1 {
 			background: #fff;
-			padding: 3em;
+			padding: 1em 5em 1em 1em;
 		}
 		.box.style4 {
 			/*background: #fff;*/
@@ -1855,10 +1855,10 @@ input, select, textarea {
 				display: block;
 				position: absolute;
 				top: 0;
-				width: 50%;
+				width: 60%;
 				height: 100%;
 				background: #152E33;
-				overflow: hidden;
+				/*overflow: hidden;*/
 			}
 
 				.box.style1 .image img {

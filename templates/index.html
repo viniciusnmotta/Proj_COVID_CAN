@@ -9,7 +9,9 @@
 		<title>COVID-19 Numbers in Canada</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<!--
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+-->
 		<link rel="stylesheet" href="./static/assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="./static/assets/css/noscript.css" /></noscript>
 
@@ -33,31 +35,33 @@
 			</section>
 
 		<!--Data Visualization-->
-			<article id='graph' class="container box style1 left" style="width: 1325px; height: 500px">
-				{%if is_wrong%}
+			<article id='graph' class="container box style1 left" style="">
+
 				<div class="image fit">
+					{%if is_wrong%}
 					<br><br><br>
 					<h1 style="color: white; text-align: center">////  Ensure you enter a valid region name  ////</h1>
 					<p style="color: white; text-align: center">Example: Canada or Quebec</p>
+					{%else%}
 				</div>
-				{%else%}
-				<a href="#" class="image fit"><img src="./plot.png" alt="" /></a>
-				{%endif%}
-
+				<div>
+					<a  class="image fit"><img src="./plot.png" alt="" /></a>
+					{%endif%}
+				</div>
 				<div class="inner">
 					<h2 style="color:#35b88f">Filter Results by Region</h2>
-					<p>Enter the Name of a Region without Quotes</p>
-					<p style="font-size:1rem">('Ontario', 'British Columbia', 'Canada', 'Quebec', 'Alberta', 'Saskatchewan',
+					<p>Enter the Name of a Region Without Quotes</p>
+					<p style="font-size:1rem; line-height:1.5">('Ontario', 'British Columbia', 'Canada', 'Quebec', 'Alberta', 'Saskatchewan',
 						'Manitoba', 'New Brunswick', 'Newfoundland and Labrador', 'Nova Scotia',
 						'Prince Edward Island', 'Northwest Territories', 'Nunavut', 'Yukon')</p>
 				</div>
 				<br>
 				<form action="{{url_for('plot', _anchor='graph')}}", method="post">
-					<input name="region",size="200", style="padding: 0em 4em 0em 0em">
+					<input name="region",size="50", style="padding: 0em 0em 0em 0em">
 					<input type="submit", style="padding: 0.1em 1em 0.1em 1em" >
 				</form>
 				<br>
-				<a href="#tb", style="color:blue">Summary table for the past 7 days </a>
+				<a href="#tb", style="color:blue">Click: Past 7 Days Summary Table </a>
 			</article>
 
 		<!--Table past 7 days-->

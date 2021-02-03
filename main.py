@@ -65,8 +65,8 @@ def make_plot():
 
 
     fig = Figure()
-    # fig.set_figheight(5)
-    # fig.set_figwidth(8)
+    # fig.set_figheight(8)
+    # fig.set_figwidth(6)
     ax1 = fig.gca()
     ax2 = ax1.twinx()
     ax1.plot(quebec['date'], quebec['rolling_cases'], color='blue', label='cases')
@@ -86,6 +86,9 @@ def make_plot():
     FigureCanvasAgg(fig).print_png(output)
     return Response(output.getvalue(), mimetype="image/png")
 
+@app.route("/test")
+def test():
+    return render_template('index2.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
