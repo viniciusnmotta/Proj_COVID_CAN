@@ -38,9 +38,8 @@ def plot():
     past_days.columns=['Date', 'Province', 'Num of Cases', 'Num of Deaths']
 
     if request.method == "POST":
-        if request.form['region'] != "" and request.form['region'] in province_list:
-            prname = request.form['region'].title()
-            print(prname)
+        prname = request.form['region'].title()
+        if prname != "" and prname in province_list:
             quebec = df.loc[df['prname'] == prname]
             past_days = quebec[['date', 'prname','numtoday','numdeathstoday']].tail(7)
             past_days.columns = ['Date', 'Province', 'Num of Cases', 'Num of Deaths']
